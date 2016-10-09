@@ -12,8 +12,8 @@ Branches
 Spring Profiles
 ---------------
 
-Par defaut : HSQLDB et Embedded Mongo 
-PROD : MySQL et Mongo
+- Par defaut : HSQLDB et Embedded Mongo 
+- PROD : MySQL et Mongo
 
 Redis
 -----
@@ -37,16 +37,16 @@ java -jar -Dspring.profiles.active=PROD target/meetup-0.0.1-SNAPSHOT.war
 URLs de test
 ------------
 
-http://localhost:8080/welcome
-http://localhost:8080/accounts?page=0&size=10
+- http://localhost:8080/welcome
+- http://localhost:8080/accounts?page=0&size=10
+- http://localhost:8080/browser/index.html
+- http://localhost:8080/swagger-ui.html
+- http://localhost:8080/manage/
+- http://localhost:8080/manage/metrics
+- http://localhost:8080/manage/logfile
 
-http://localhost:8080/browser/index.html
+Comptes
+-------
 
-http://localhost:8080/swagger-ui.html
-
-http://localhost:8080/manage/
-http://localhost:8080/manage/metrics
-http://localhost:8080/manage/logfile
-
-user@gmail.com  : 123soleil => ROLE_USER
-admin@gmail.com : 123soleil => ROLE_ADMIN
+- user@gmail.com  : 123soleil (ROLE_USER)
+- admin@gmail.com : 123soleil (ROLE_ADMIN)
