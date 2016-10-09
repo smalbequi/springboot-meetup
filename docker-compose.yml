@@ -1,0 +1,14 @@
+version: '2'
+services:
+  web:
+    build: .
+    image: meetup
+    ports:
+     - "8080:8080"
+    depends_on:
+       - mongo
+       - redis
+  mongo:
+    image: meetup-mongo
+  redis:
+    image: meetup-redis
