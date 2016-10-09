@@ -33,6 +33,7 @@ public class UserAccount {
     @Size(max = 20)
     private String password;
 
+    @NotBlank
     @Size(max = 20)
     private String role;
 
