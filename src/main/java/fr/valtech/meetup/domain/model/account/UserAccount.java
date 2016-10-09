@@ -1,49 +1,42 @@
 package fr.valtech.meetup.domain.model.account;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.validation.constraints.Size;
-import org.hibernate.annotations.NaturalId;
 import org.hibernate.validator.constraints.Email;
 import org.hibernate.validator.constraints.NotBlank;
+import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.index.Indexed;
+import org.springframework.data.mongodb.core.mapping.Document;
 
-@Entity
+@Document(collection = "userAccount")
 public class UserAccount {
 
     @Id
-    @GeneratedValue
-    private Long id;
+    private String id;
 
     @Email
     @NotBlank
-    @NaturalId
-    @Size(max = 125)
+    @Indexed(unique = true)
     private String email;
 
     @NotBlank
-    @Size(max = 75)
     private String lastName;
 
     @NotBlank
-    @Size(max = 75)
     private String firstName;
 
     @NotBlank
-    @Size(max = 20)
     private String password;
 
-    @Size(max = 20)
+    @NotBlank
     private String role;
 
     public UserAccount() {
     }
 
-    public Long getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(String id) {
         this.id = id;
     }
 
